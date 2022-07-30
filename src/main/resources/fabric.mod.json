@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "isaidnosnow",
+  "version": "${version}",
+  "name": "ISaidNoSnow",
+  "description": "I Said No Snow!",
+  "authors": [
+    "Loxoz"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/isaidnosnow",
+    "issues": "https://www.curseforge.com/minecraft/mc-mods/isaidnosnow/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/isaidnosnow/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "fr.loxoz.isaidnosnow.ISaidNoSnow"
+    ]
+  },
+  "mixins": [
+    "isaidnosnow.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  }
+}
