@@ -21,7 +21,7 @@ public abstract class MixinSnowBlock extends Block {
     @SuppressWarnings("deprecation")
     @Override
     public BlockRenderType getRenderType(BlockState state) {
-        if (ISaidNoSnow.INSTANCE.isEnabled() && state.get(SnowBlock.LAYERS) == 1)
+        if (ISaidNoSnow.INSTANCE != null && ISaidNoSnow.INSTANCE.isEnabled() && state.get(SnowBlock.LAYERS) == 1)
             return BlockRenderType.INVISIBLE;
         return super.getRenderType(state);
     }
@@ -33,7 +33,7 @@ public abstract class MixinSnowBlock extends Block {
 
     @Inject(method = "getOutlineShape", at = @At("HEAD"), cancellable = true)
     private void onGetOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context, CallbackInfoReturnable<VoxelShape> cir) {
-        if (ISaidNoSnow.INSTANCE.isEnabled() && state.get(SnowBlock.LAYERS) == 1)
+        if (ISaidNoSnow.INSTANCE != null && ISaidNoSnow.INSTANCE.isEnabled() && state.get(SnowBlock.LAYERS) == 1)
             cir.setReturnValue(VoxelShapes.empty());
     }
 }
